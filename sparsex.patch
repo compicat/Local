@@ -1,0 +1,41 @@
+From: Steven Rostedt <rostedt@goodmis.org>
+To: LKML <linux-kernel@vger.kernel.org>
+Cc: "Linus Torvalds" <torvalds@linux-foundation.org>,
+	"Hans de Goede" <hdegoede@redhat.com>,
+	"Ilpo Järvinen" <ilpo.jarvinen@linux.intel.com>,
+	platform-driver-x86@vger.kernel.org
+Subject: [PATCH] platform/x86: thinkpad_acpi: Select INPUT_SPARSEKMAP in Kconfig
+Date: Wed, 22 May 2024 07:48:13 -0400	[thread overview]
+Message-ID: <20240522074813.379b9fc2@gandalf.local.home> (raw)
+
+From: "Steven Rostedt (Google)" <rostedt@goodmis.org>
+
+Now that drivers/platform/x86/thinkpad_acpi.c uses
+sparse_keymap_report_event(), it must select INPUT_SPARSEKMAP in its
+Kconfig option otherwise the build fails with:
+
+  ld: vmlinux.o: in function `tpacpi_input_send_key':
+  thinkpad_acpi.c:(.text+0xd4d27f): undefined reference to `sparse_keymap_report_event'
+  ld: vmlinux.o: in function `hotkey_init':
+  thinkpad_acpi.c:(.init.text+0x66cb6): undefined reference to `sparse_keymap_setup'
+
+Fixes: 42f7b965de9d ("platform/x86: thinkpad_acpi: Switch to using sparse-keymap helpers")
+Signed-off-by: Steven Rostedt (Google) <rostedt@goodmis.org>
+---
+ drivers/platform/x86/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/platform/x86/Kconfig b/drivers/platform/x86/Kconfig
+index 0ec952b5d03e..1953317541ea 100644
+--- a/drivers/platform/x86/Kconfig
++++ b/drivers/platform/x86/Kconfig
+@@ -515,6 +515,7 @@ config THINKPAD_ACPI
+ 	select NVRAM
+ 	select NEW_LEDS
+ 	select LEDS_CLASS
++	select INPUT_SPARSEKMAP
+ 	help
+ 	  This is a driver for the IBM and Lenovo ThinkPad laptops. It adds
+ 	  support for Fn-Fx key combinations, Bluetooth control, video
+-- 
+2.43.0
