@@ -1,0 +1,11 @@
+--- file1.txt	2024-10-03 13:48:16.010325313 +0300
++++ file2.txt	2024-10-03 13:48:23.188354974 +0300
+@@ -632,6 +632,8 @@ static const struct usb_device_id quirks
+ 	/* Additional MediaTek MT7925 Bluetooth devices */
+ 	{ USB_DEVICE(0x0489, 0xe113), .driver_info = BTUSB_MEDIATEK |
+ 						     BTUSB_WIDEBAND_SPEECH },
++	{ USB_DEVICE(0x0e8d, 0x7925), .driver_info = BTUSB_MEDIATEK |
++						     BTUSB_WIDEBAND_SPEECH },
+ 	{ USB_DEVICE(0x0489, 0xe118), .driver_info = BTUSB_MEDIATEK |
+ 						     BTUSB_WIDEBAND_SPEECH },
+ 	{ USB_DEVICE(0x0489, 0xe11e), .driver_info = BTUSB_MEDIATEK |
