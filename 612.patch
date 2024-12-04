@@ -1,0 +1,15 @@
+diff --git a/drivers/bluetooth/btusb.c b/drivers/bluetooth/btusb.c
+index acdba5d77694..2339ca629a83 100644
+--- a/drivers/bluetooth/btusb.c
++++ b/drivers/bluetooth/btusb.c
+@@ -690,6 +690,8 @@ static const struct usb_device_id quirks
+ 						     BTUSB_WIDEBAND_SPEECH },
+ 
+ 	/* Additional MediaTek MT7925 Bluetooth devices */
+-	{ USB_DEVICE(0x0489, 0xe113), .driver_info = BTUSB_MEDIATEK |
++	{ USB_DEVICE(0x0e8d, 0x7925), .driver_info = BTUSB_MEDIATEK |
++						     BTUSB_WIDEBAND_SPEECH },
++	{ USB_DEVICE(0x0e8d, 0xe113), .driver_info = BTUSB_MEDIATEK |
+ 						     BTUSB_WIDEBAND_SPEECH },
+ 	{ USB_DEVICE(0x0489, 0xe118), .driver_info = BTUSB_MEDIATEK |
+ 						     BTUSB_WIDEBAND_SPEECH },
