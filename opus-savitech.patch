@@ -1,3 +1,4 @@
+diff --git a/sound/usb/quirks.c b/sound/usb/quirks.c
 --- 1	2025-05-16 10:23:14.171419246 +0300
 +++ 2	2025-05-16 10:23:07.056195103 +0300
 @@ -2016,6 +2016,8 @@ u64 snd_usb_interface_dsd_format_quirks(
