@@ -7,7 +7,7 @@ diff --git a/sound/usb/quirks.c b/sound/usb/quirks.c
  	case USB_ID(0x10cb, 0x0103): /* The Bit Opus #3; with fp->dsd_raw */
 +	case USB_ID(0x10cb, 0x080b): /* The Bit Opus #11; with fp->dsd_raw */
 +        case USB_ID(0x262a, 0x9023): /* Savitech SA9023; with fp->dsd_raw */
-+        case USB_ID(0x262a, 0x9023): /* Jcally JM20 Max (CS43131 + SGM8262); with fp->dsd_raw */
++        case USB_ID(0x2972, 0x0081): /* Jcally JM20 Max (CS43131 + SGM8262); with fp->dsd_raw */
  	case USB_ID(0x16d0, 0x06b2): /* NuPrime DAC-10 */
  	case USB_ID(0x16d0, 0x06b4): /* NuPrime Audio HD-AVP/AVA */
  	case USB_ID(0x16d0, 0x0733): /* Furutech ADL Stratos */
