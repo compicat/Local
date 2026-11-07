@@ -1,7 +1,7 @@
-diff --git a/drivers/bluetooth/btusb.c b/drivers/bluetooth/btusb.c
+diff --git a/drivers/bluetooth/btusb_main.c b/drivers/bluetooth/btusb_main.c
 index acdba5d77694..2339ca629a83 100644
---- a/drivers/bluetooth/btusb.c
-+++ b/drivers/bluetooth/btusb.c
+--- a/drivers/bluetooth/btusb_main.c
++++ b/drivers/bluetooth/btusb_main.c
 @@ -795,6 +795,8 @@
  	/* Additional MediaTek MT7925 Bluetooth devices */
  	{ USB_DEVICE(0x0489, 0xe111), .driver_info = BTUSB_MEDIATEK |
